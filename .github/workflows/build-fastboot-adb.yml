@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up dependencies
       run: sudo apt-get update && sudo apt-get install -y build-essential git make gcc g++ unzip wget cpio rsync bc python3
