@@ -1,6 +1,4 @@
-menu "Custom packages"
-
-source "$BR2_EXTERNAL_CUSTOM_PACKAGES_PATH/package/adb/Config.in"
-source "$BR2_EXTERNAL_CUSTOM_PACKAGES_PATH/package/fastboot/Config.in"
-
+menu "Custom Static Tools"
+source "$(BR2_EXTERNAL_CUSTOM_PACKAGES_PATH)/package/adb/Config.in"
+source "$(BR2_EXTERNAL_CUSTOM_PACKAGES_PATH)/package/fastboot/Config.in"
 endmenu

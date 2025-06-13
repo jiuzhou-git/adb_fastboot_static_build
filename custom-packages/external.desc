@@ -1,2 +1,2 @@
-name: adb_fastboot
-desc: External layer for ADB and Fastboot static builds
+name: CustomADB
+desc: ADB & Fastboot Static Buildroot Extension
