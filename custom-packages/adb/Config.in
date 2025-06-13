@@ -1,0 +1,4 @@
+config BR2_PACKAGE_ADB
+	bool "adb"
+	help
+	  Android Debug Bridge

@@ -1,0 +1,4 @@
+config BR2_PACKAGE_FASTBOOT
+	bool "fastboot"
+	help
+	  Android Fastboot Tool

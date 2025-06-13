@@ -1,0 +1,34 @@
+name: Build ADB & Fastboot (aarch64 static)
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up dependencies
+      run: sudo apt-get update && sudo apt-get install -y build-essential git make gcc g++ unzip wget cpio rsync bc python3
+
+    - name: Download Buildroot
+      run: |
+        git clone https://github.com/buildroot/buildroot.git
+        cd buildroot
+        git checkout 2024.02
+        make BR2_EXTERNAL=../custom-packages O=../output aarch64_custom_defconfig
+        make O=../output
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: adb-fastboot-static
+        path: output/images/rootfs.tar
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: output/images/rootfs.tar
