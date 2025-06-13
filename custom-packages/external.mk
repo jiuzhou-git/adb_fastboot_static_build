@@ -1,0 +1,1 @@
+# external.mk - required for BR2_EXTERNAL
